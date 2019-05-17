@@ -26,7 +26,7 @@ class RoomProvider extends Component {
 	formatData(items) {
 		let tempItems = items.map(item => {
 			let id = item.sys.id;
-			let images = item.fields.images.map(image => image.fields.file.ul);
+			let images = item.fields.images.map(image => image.fields.file.url);
 			let room = { 
 				...item.fields, 
 				images: images,
@@ -38,6 +38,7 @@ class RoomProvider extends Component {
 	}
 
   render() {
+		// console.log(this.state);
     return (
       <RoomContext.Provider value={{ ...this.state }}>
         {this.props.children}
