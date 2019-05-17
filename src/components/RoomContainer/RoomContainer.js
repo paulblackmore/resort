@@ -14,10 +14,10 @@ export default function RoomContainer() {
           return <Loading />;
         }
         return (
-          <div>
+          <React.Fragment>
             <RoomFilter rooms={rooms}/>
             <RoomList rooms={sortedRooms}/>
-          </div>
+          </React.Fragment>
         )
       }}
     </RoomConsumer>
