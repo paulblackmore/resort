@@ -1,25 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { RoomContext } from '../../Context';
 import RoomFilter from './RoomFilter';
 import RoomList from './RoomList';
-import { RoomConsumer } from '../../Context';
 import Loading from '../Loading/Loading';
 
 
 export default function RoomContainer() {
+  const context = useContext(RoomContext);
+  const { loading, sortedRooms } = context;
+
+  if(loading) {
+    return <Loading />;
+  }
   return (
-    <RoomConsumer>
-      {value => {
-        const { loading, sortedRooms, rooms } = value;
-        if(loading) {
-          return <Loading />;
-        }
-        return (
-          <React.Fragment>
-            <RoomFilter rooms={rooms}/>
-            <RoomList rooms={sortedRooms}/>
-          </React.Fragment>
-        )
-      }}
-    </RoomConsumer>
+    <React.Fragment>
+      <RoomFilter />
+      <RoomList rooms={sortedRooms}/>
+    </React.Fragment>
   )
 }

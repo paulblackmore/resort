@@ -3,12 +3,13 @@ import { RoomContext } from '../../Context';
 import Title from '../Title/Title';
 
 const getUnique = (items, value) => {
-  return [... new Set(items.map(item => item[value]))]
+  return [ ...new Set(items.map(item => item[value])) ]
 }
 
-export default function RoomFilter({ rooms }) {
+export default function RoomFilter() {
   const context = useContext(RoomContext);
   const { 
+    rooms,
     change, 
     type, 
     capacity, 
