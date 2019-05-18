@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import items from './data';
 import Client from './Contentful';
 
 const RoomContext = React.createContext();
@@ -29,7 +28,7 @@ class RoomProvider extends Component {
 				order: "fields.price"
 			});
 			let rooms = this.formatData(response.items);
-			let featuredRooms = rooms.filter(room => room.featured);
+			let featuredRooms = rooms.filter(room => room.featured === true);
 			let maxPrice = Math.max(...rooms.map(item => item.price));
 			let maxSize = Math.max(...rooms.map(item => item.size));
 			this.setState({
@@ -53,7 +52,7 @@ class RoomProvider extends Component {
 	formatData(items) {
 		let tempItems = items.map(item => {
 			let id = item.sys.id;
-			let images = item.fields.images.map(image => image.fields.file.url);
+			let images = item.fields.images && item.fields.images.map(image => image.fields.file.url);
 			let room = { 
 				...item.fields, 
 				images: images,
@@ -120,14 +119,13 @@ class RoomProvider extends Component {
 	}
 
   render() {
-		// console.log(this.state);
     return (
       <RoomContext.Provider value={{ 
 					...this.state,
 					getRoom: this.getRoom,
 					change: this.change
-				
-				}}>
+				}}
+			>
         {this.props.children}
       </RoomContext.Provider>
     )
