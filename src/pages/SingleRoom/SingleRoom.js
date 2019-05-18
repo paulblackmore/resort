@@ -4,6 +4,7 @@ import defaultBcg from '../../images/room-1.jpeg';
 import Banner from '../../components/Banner/Banner';
 import { RoomContext } from '../../Context';
 import StyledHero from '../../components/StyledHero/StyledHero';
+import './SingleRoom.css';
 
 export default class SingleRoom extends Component {
   state = {

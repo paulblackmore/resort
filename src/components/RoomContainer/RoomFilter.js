@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { RoomContext } from '../../Context';
 import Title from '../Title/Title';
+import './RoomContainer.css';
 
 const getUnique = (items, value) => {
   return [ ...new Set(items.map(item => item[value])) ]

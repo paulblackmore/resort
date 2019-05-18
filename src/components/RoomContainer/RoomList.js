@@ -1,5 +1,6 @@
 import React from 'react';
 import Room from '../Room/Room';
+import './RoomContainer.css';
 
 export default function RoomList({ rooms }) {
   if(rooms.length === 0) {
