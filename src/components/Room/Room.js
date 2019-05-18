@@ -9,7 +9,7 @@ export default function Room({ room }) {
 		<React.Fragment>
 			<article className="room">
 				<div className="img-container">
-					<img src={images && images[0] || defaultImg} alt={name}/>
+					<img src={(images && images[0]) || defaultImg} alt={name}/>
 					<div className="price-top">
 						<h6>${price}</h6>
 						<p>per night</p>

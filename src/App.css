@@ -4,16 +4,14 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: #af9a7d;
+  --primaryColor: #ee9416;
   --mainWhite: #fff;
-  --offWhite: #f7f7f7;
+  --offWhite: #fff;
   --mainBlack: #222;
   --mainGrey: #ececec;
-  --darkGrey: #cfcfcf;
-  --mainTransition: all 0.3s linear;
-  --mainSpacing: 3px;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --darkGrey: #eee;
+  --mainTransition: all 0.5s ease-in;
+  --mainSpacing: 2px;
 }
 /* globals */
 body {
@@ -95,11 +93,17 @@ h6 {
   width: 100%;
   padding: 0.75rem 2rem;
   background: var(--offWhite);
+  box-shadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 .nav-header {
   display: flex;
   justify-content: space-between;
+}
+.nav-header a {
+  color: var(--mainBlack);
+  text-decoration: none;
+  padding-top: 10px;
 }
 .nav-btn {
   background: transparent;
@@ -143,6 +147,7 @@ h6 {
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
+    justify-content: space-between;
   }
   .nav-links {
     height: auto;
@@ -181,6 +186,7 @@ h6 {
 }
 .banner h1 {
   font-size: 2.5rem;
+  font-weight: 200;
 }
 .banner div {
   width: 10rem;
@@ -233,7 +239,7 @@ h6 {
   padding: 5rem 0;
 }
 .services {
-  background: var(--darkGrey);
+  background: var(--mainWhite);
   text-align: center;
 }
 .services-center {
@@ -299,12 +305,9 @@ h6 {
 /* end pf featured rooms */
 /* room */
 .room {
-  box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
 }
-.room:hover {
-  box-shadow: var(--darkShadow);
-}
+
 
 .img-container {
   position: relative;
@@ -318,7 +321,7 @@ h6 {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--primaryColor);
   color: var(--mainWhite);
   padding: 0.3rem 0.6rem 0.5rem;
   border-bottom-right-radius: 1rem;
@@ -356,7 +359,7 @@ h6 {
   text-transform: capitalize;
   padding: 0.5rem 0;
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: var(--mainSpacing);
 }
 /* end of room  */
@@ -474,16 +477,20 @@ h6 {
 }
 .form-group {
   text-transform: capitalize;
+  color: var(--primaryColor);
 }
 .form-group label {
   display: block;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 0.5rem;
+  color: var(--primaryColor);
 }
 .form-control {
   width: 100%;
   background: transparent;
   font-size: 1rem;
+  border: 2px solid var(--primaryColor);
+  color: var(--primaryColor);
 }
 .size-inputs {
   display: flex;
